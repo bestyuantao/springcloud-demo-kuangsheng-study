@@ -1,0 +1,26 @@
+server:
+  port: 8003
+
+mybatis:
+  type-aliases-package: com.tao.springcloud.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+spring:
+  application:
+    name: SpringCLoudProvider
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/db02?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/,http://eureka7004.com:7004/eureka/
+  instance:
+    instance-id: springcloud-provider-dept-8003
+
+info:
+
